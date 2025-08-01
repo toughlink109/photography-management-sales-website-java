@@ -11,9 +11,40 @@
 ### 项目开发情况
 
 + 前后端分类部署
-  + 前端`HTML`、`css`、`JS`、`VUE`
-  + 后端`Java`、`SpingBoot框架`
-  + 实现支付宝沙箱模拟支付（微信、银联等如需请自行配置），除支付宝外其他支付方式系统中为模拟支付
+  + 前端`HTML`、`css`、`JS`、`VUE`。
+  + 后端`Java`、`SpingBoot框架`。
+  + 实现支付宝沙箱模拟支付（微信、银联等如需请自行配置），除支付宝外其他支付方式系统中为模拟支付。
+## 开发环境
+### 后端
++ [Java 8](https://www.java.com/zh-CN/download/?locale=zh_)
++ [Maven 3.6.3](https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip)
+### 前端
++ [Node.js 14.15.5](https://nodejs.org/en/blog/release/v14.15.5) 
+
+#### 安装依赖
+
+在`code/vue-admin`和`code/vue-front`分别输入构建版本的步骤命令后待安装完成方可启动`管理员`与`用户`界面，
+如有报错请自行排查Node版本，推荐使用[nvm](https://github.com/coreybutler/nvm-windows/releases "Releases · coreybutler/nvm-windows · GitHub")切换不同版本，nvm（node.js version management），是一个nodejs的版本管理工具，主要为了解决node.js 各种版本存在不兼容现象 可以通过它可以安装和切换不同版本的node.js。
+
+查看`node`版本。
+```bash
+node -v 
+```
+安装依赖
+```bash
+npm install
+```
+构建生产版本
+
+```bash
+npm run build
+```
+启动开发服务器
+```bash
+npm run serve
+```
+#### 前端启动
+
 
 ## 论文/项目提纲
 
