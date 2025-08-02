@@ -6,7 +6,11 @@
 
 本项目为本人毕设，顺利毕业后本着互联网精神故开源、希望可以帮到各位，可用于作业、期末设计或毕业设计，未防止本人论文被后期抽检后出现雷同现象，论文及其附属材料不予公开，只挑选部分内容进入`Readme`中以供各位参考。
 
+## License
 
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+[![License: CC BY-NC 4.0](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/License-CC%20BY--NC%204.0-lightgrey.svg+xml)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ### 项目开发情况
 
