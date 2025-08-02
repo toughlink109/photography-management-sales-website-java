@@ -68,17 +68,44 @@ npm run serve
 
 本系统使用IDEA软件作为主要开发工具，项目管理工具为Maven，负责项目的依赖管理和构建过程，通过定义pom.xml文件统一管理所有依赖库，确保开发环境的一致性同时添加了MySQL作为数据库连接与存储工具，Navicat Premium 16提供了直观的图形化界面，支持数据库设计、数据迁移和查询优化等功能，极大简化了MySQL数据库的管理和维护工作。Tomcat则作为Web容器运行前端页面和后端Servlet，提供高效的请求处理能力。具体情况如表 2.1所示。
 
-<center>表 2.1 项目开发工具一览表
+<p align= 'center'>表 2.1 项目开发工具一览表
 
-| 序号 | 名称              | 版本                 | 用途                 |
-| ---- | ----------------- | -------------------- | -------------------- |
-| 1    | Idea              | Idea 2021            | Java代码编辑与调试   |
-| 2    | Maven             | apache-maven-3.6.3   | 依赖管理与自动化构建 |
-| 3    | Tomcat            | apache-tomcat-8.5.34 | 运行页面和Servlet    |
-| 4    | MySQL             | MySQL 5.7            | 主要关系数据存储     |
-| 5    | Navicat Premium16 | 16.0.12              | 快捷访问数据库       |
+| 序号 |       名称        |         版本         | 用途                 |
+| :--: | :---------------: | :------------------: | -------------------- |
+|  1   |       Idea        |      Idea 2021       | Java代码编辑与调试   |
+|  2   |       Maven       |  apache-maven-3.6.3  | 依赖管理与自动化构建 |
+|  3   |      Tomcat       | apache-tomcat-8.5.34 | 运行页面和Servlet    |
+|  4   |       MySQL       |      MySQL 5.7       | 主要关系数据存储     |
+|  5   | Navicat Premium16 |       16.0.12        | 快捷访问数据库       |
 
-本项目所使用的工具中，IDEA和Tomcat均为免费开源工具，降低了开发成本；而Navicat Premium 16为商业软件，但其强大的功能显著提升了数据库管理效率。
+## 数据库账密
+
+### 管理员端
+
+| 序号/ID | 用户名 |     密码     |
+| :-----: | :----: | :----------: |
+|    1    | admin  |    admin     |
+|    2    | admin2 | ABC1q2w3e4r* |
+
+
+
+### 用户端
+| 序号/ID       | 用户名               | 密码           |
+| :-----------: | :------------------: | :------------: |
+| 11            | 不吃香菜(考研上岸版) | 1q2w3e4r5t6y_A |
+| 12           | 努力搬砖的小彤       | ABC1q2w3e4r*   |
+| 13            | 爱学习的小祁         | ABC1q2w3e4r*   |
+| 14            | 奋斗的国振           | ABC1q2w3e4r*   |
+| 15           | 元气满满的宇航       | ABC1q2w3e4r*   |
+| 16           | 向前冲的梓豪         | ABC1q2w3e4r*   |
+| 17            | 勇敢的其乙           | ABC1q2w3e4r*   |
+| 18            | 积极向上的劳诚       | ABC1q2w3e4r*   |
+| 1714136710205 | 阿凡提与驴           | tEst123456!!   |
+| 1739030867372 | test                 | Test123456..   |
+| 1743948827083 | 威武的大狗           | 1q2w3e4r5t6y_A |
+| 1744099588211 | 20250408testuser     | ABC1q2w3e4r*   |
+| 1747870751079  | 愤怒的来贼           | Zxc123456!     |
+| 1749572326883  | 杰克老船长           | Zxc123456!     |
 
 ## 相关图表
 
@@ -86,31 +113,37 @@ npm run serve
 
 #### 管理员
 
-<img src="./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725101813916-1753409900471-32-1753433426455-1.png" alt="image-20250725101813916" style="zoom:67%;" />
+<img src="./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725101813916-1753409900471-32-1753433426455-1.png" alt="image-20250725101813916" style="zoom: 50%;" />
 
-<center> 管理员用例图
+<p align= 'center'>管理员用例图</p>
+
 
 #### 普通用户
 
 ![](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/%E7%94%A8%E6%88%B7%E7%94%A8%E4%BE%8B%E5%9B%BE.png)
 
-<center>普通用户用例图
+<p align= 'center'>普通用户用例图</p>
+
 
 ### 系统功能图
 
 ![](./img/基于Java的个人摄影作品管理与售卖网站/基于Java的个人摄影作品管理网站的设计与实现v2.drawio.png)
 
-<center>系统总体功能图
+<p align= 'center'>系统总体功能图</p>
+
 
 ### 登录流程图
 
 <img src="./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B%E5%9B%BE.png" style="zoom: 67%;" />
 
+<p align="center">登录流程图</p>
+
 ### 用户管理流程图
 
 <img src="./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725093757669.png" alt="image-20250725093757669" style="zoom: 67%;" />
 
-<center>用户管理流程图
+<p align= 'center'>用户管理流程图</p>
+
 
 ### 个人中心流程图
 
@@ -118,14 +151,15 @@ npm run serve
 
 <img src="./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725093909670.png" alt="image-20250725093909670" style="zoom:50%;" />
 
+<p align= 'center'>个人中心流程图</p>
 
-<center>个人中心流程图
 
 ### 系统E-R图
 
 <img src="./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094005072-1753409731847-6.png" alt="image-20250725094005072" style="zoom:67%;" />
 
-<center>系统E-R图
+<p align= 'center'>系统E-R图</p>
+
 
 ## 系统实现截图
 
@@ -133,50 +167,61 @@ npm run serve
 
 ![image-20250725094121664](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094121664-1753409736282-8.png)
 
-<center>管理员用户登录界面图
+<p align= 'center'>管理员用户登录界面图</p>
+
 
 ![image-20250725094154765](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094154765-1753409739490-10.png)
 
-<center>用户管理界面图
+<p align= 'center'>用户管理界面图</p>
+
 
 ![image-20250725094213530](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094213530-1753409742647-12.png)
 
-<center>摄影作品管理界面图
+<p align= 'center'>摄影作品管理界面图</p>
+
 
 ![image-20250725094231753](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094231753-1753409744920-14.png)
 
-<center>订单管理功能及其二级子功能模块
+<p align= 'center'>订单管理功能及其二级子功能模块</p>
+
 
 ![image-20250725094248916](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094248916-1753409746774-16.png)
 
-<center>订单的日、月、年销量及其销售额功能总体分布
+<p align= 'center'>订单的日、月、年销量及其销售额功能总体分布</p>
+
 
 ![image-20250725094858755](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725094858755-1753409765523-18.png)
 
-<center>日销量统计图
+<p align= 'center'>日销量统计图</p>
+
 
 ### 用户界面
 
 ![image-20250725095013504](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725095013504-1753409767631-20.png)
 
-<center>游客系统首页展示
+<p align= 'center'>游客系统首页展示</p>
+
 
 ![image-20250725095048713](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725095048713-1753409769575-22.png)
 
-<center>用户登录界面
+<p align= 'center'>用户登录界面</p>
+
 
 ![image-20250725095113639](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725095113639-1753409772297-24.png)
 
-<center>摄影设备模块展示
+<p align= 'center'>摄影设备模块展示</p>
+
 
 ![image-20250725095129529](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725095129529-1753409774177-26.png)
 
-<center>个人资料模块展示
+<p align= 'center'>个人资料模块展示</p>
+
 
 ![image-20250725095150793](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725095150793-1753409776075-28.png)
 
-<center>用户充值显示支付二维码弹窗
+<p align= 'center'>用户充值显示支付二维码弹窗</p>
+
 
 ![image-20250725095250091](./img/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E7%AE%A1%E7%90%86%E4%B8%8E%E5%94%AE%E5%8D%96%E7%BD%91%E7%AB%99/image-20250725095250091-1753409778047-30.png)
 
-<center>支付宝开放平台沙箱账号中商家与买家的余额状态
+<p align= 'center'>支付宝开放平台沙箱账号中商家与买家的余额状态</p>
