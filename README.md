@@ -112,6 +112,22 @@ graph TB
     class ALIPAY,BAIDU,MAP intNode
     class HUTOOL,FASTJSON,POI,COMMONS toolNode
 ```
+### 架构说明
+
+| 层级  | 组件  | 技术栈 |
+| --- | --- | --- |
+| **客户端层** | 管理员后台 (vue-admin) | Vue 2.6 + Element UI + ECharts |
+|     | 用户前端 (vue-front) | Vue 2.6 + Element UI + Swiper + 地图组件 |
+| **认证安全** | Apache Shiro | 权限控制、角色认证、会话管理 |
+| **后端服务** | Spring Boot 2.2.2 | Java 8 + RESTful API |
+| **数据访问** | MyBatis Plus | ORM 映射、自动 CRUD |
+| **数据存储** | MySQL 5.7 | 关系型数据库，20+ 数据表 |
+| **外部集成** | 支付宝沙箱 SDK 4.35.79 | 在线支付 |
+|     | 百度 AI SDK | 图像识别、内容审核 |
+|     | 高德/百度地图 | 定位服务 |
+
+---
+
 ## License
 
 This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
