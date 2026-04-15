@@ -6,6 +6,112 @@
 
 本项目为本人毕设，顺利毕业后本着互联网精神故开源、希望可以帮到各位，可用于作业、期末设计或毕业设计，未防止本人论文被后期抽检后出现雷同现象，论文及其附属材料不予公开，只挑选部分内容进入`Readme`中以供各位参考。
 
+## 系统架构图
+
+```mermaid
+graph TB
+    subgraph CLIENT["🖥️ 客户端层"]
+        direction TB
+        ADMIN["<b>管理员后台</b><br/>vue-admin<br/>Vue 2.6 + Element UI<br/>ECharts 数据可视化"]
+        USER["<b>用户前端</b><br/>vue-front<br/>Vue 2.6 + Element UI<br/>Swiper 轮播 + 地图组件"]
+    end
+
+    subgraph GATEWAY["🔐 认证与安全"]
+        SHIRO["<b>Apache Shiro</b><br/>权限控制<br/>角色认证<br/>会话管理"]
+        TOKEN["TokenEntity<br/>JWT Token 管理"]
+    end
+
+    subgraph BACKEND["⚙️ 后端服务层 Spring Boot 2.2.2"]
+        direction TB
+        subgraph CORE["核心业务模块"]
+            UC["用户管理<br/>OrdinaryUserController<br/>AdminsController"]
+            WC["作品管理<br/>PhotographyWorksController<br/>WorkPublishController"]
+            OC["订单管理<br/>OrdersController<br/>CartController"]
+            EC["设备租赁<br/>EquipmentRentalController<br/>EquipmentReturnsController"]
+        end
+
+        subgraph SOCIAL["社交互动模块"]
+            FORUM["论坛交流<br/>ForumController"]
+            COMMENT["评论系统<br/>WorkCommentsController<br/>PhotographyTopicCommentsController"]
+            MSG["消息通知<br/>MessagesController"]
+            VOTE["投票活动<br/>WorkVoteController"]
+        end
+
+        subgraph CONTENT["内容管理模块"]
+            NEWS["新闻公告<br/>NewsController"]
+            TOPIC["摄影话题<br/>PhotographyTopicsController"]
+            EVENT["活动管理<br/>EventsController<br/>ActivityRegistrationController"]
+        end
+
+        subgraph SYS["系统模块"]
+            CONFIG["系统配置<br/>ConfigController"]
+            FILE["文件上传<br/>FileController<br/>最大 300MB"]
+            COMMON["公共接口<br/>CommonController"]
+        end
+    end
+
+    subgraph DAO["📦 数据访问层"]
+        MYBATIS["MyBatis Plus<br/>ORM 映射<br/>自动 CRUD"]
+        MAPPER["Mapper XML<br/>SQL 映射文件"]
+    end
+
+    subgraph DB["💾 数据存储层"]
+        MYSQL[("<b>MySQL 5.7</b><br/>personal_photography<br/>20+ 数据表")]
+    end
+
+    subgraph INTEGRATION["🔗 外部集成"]
+        ALIPAY["<b>支付宝沙箱</b><br/>AlipayController<br/>SDK 4.35.79<br/>在线支付"]
+        BAIDU["<b>百度 AI SDK</b><br/>图像识别<br/>内容审核"]
+        MAP["<b>地图服务</b><br/>高德地图 vue-amap<br/>百度地图 vue-baidu-map"]
+    end
+
+    subgraph TOOLS["🛠️ 工具库"]
+        HUTOOL["Hutool<br/>工具集"]
+        FASTJSON["FastJSON<br/>JSON 处理"]
+        POI["Apache POI<br/>Excel 导出"]
+        COMMONS["Commons-Lang3<br/>Commons-IO"]
+    end
+
+    ADMIN -->|HTTP/REST API| SHIRO
+    USER -->|HTTP/REST API| SHIRO
+    SHIRO --> TOKEN
+    TOKEN --> UC
+    UC --> MYBATIS
+    WC --> MYBATIS
+    OC --> MYBATIS
+    EC --> MYBATIS
+    FORUM --> MYBATIS
+    COMMENT --> MYBATIS
+    MSG --> MYBATIS
+    VOTE --> MYBATIS
+    NEWS --> MYBATIS
+    TOPIC --> MYBATIS
+    EVENT --> MYBATIS
+    CONFIG --> MYBATIS
+    FILE --> MYBATIS
+    MYBATIS --> MAPPER
+    MAPPER --> MYSQL
+    OC -->|支付请求| ALIPAY
+    WC -->|图像处理| BAIDU
+    USER -->|定位服务| MAP
+    BACKEND -.-> TOOLS
+
+    classDef clientNode fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    classDef authNode fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+    classDef serviceNode fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    classDef daoNode fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
+    classDef dbNode fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#1e293b
+    classDef intNode fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+    classDef toolNode fill:#64748b,stroke:#475569,stroke-width:1px,color:#fff
+
+    class ADMIN,USER clientNode
+    class SHIRO,TOKEN authNode
+    class UC,WC,OC,EC,FORUM,COMMENT,MSG,VOTE,NEWS,TOPIC,EVENT,CONFIG,FILE,COMMON serviceNode
+    class MYBATIS,MAPPER daoNode
+    class MYSQL dbNode
+    class ALIPAY,BAIDU,MAP intNode
+    class HUTOOL,FASTJSON,POI,COMMONS toolNode
+
 ## License
 
 This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
